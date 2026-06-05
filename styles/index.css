@@ -146,11 +146,22 @@ body {
   border-radius: var(--radius-btn);
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    scale 0.2s ease;
 }
 
 .card__share-button svg * {
   transition: fill 0.2s ease;
+}
+
+.card__share-button:focus-visible {
+  outline: 2px dashed var(--color-grayish-blue);
+  outline-offset: 4px;
+}
+
+.card__share-button:active {
+  scale: 0.9;
 }
 
 .card__share.is-active .card__share-button {

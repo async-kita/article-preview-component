@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32"
       href="./images/favicon-32x32.png">
     <title>Frontend Mentor | Article preview component</title>
+    <link rel="stylesheet" href="./styles/index.css">
   </head>
   <body>
     <main class="content">
@@ -15,64 +16,68 @@
           <img class="card__image" src="./images/drawers.jpg"
             alt="Green chest of drawers with photo frames">
         </div>
-        <section class="card__body">
-          <h1 class="card__title">Shift the overall look and feel by adding
-            these wonderful
-            touches to furniture in your home</h1>
-          <p class="card__description">Ever been in a room and felt like
-            something was missing? Perhaps
-            it felt slightly bare and uninviting. I’ve got some simple tips
-            to help you make any room feel complete.</p>
-        </section>
-        <footer class="card__footer">
-          <div class="card__author">
-            <div class="card__author-photo-wrapper">
-              <img src="./images/avatar-michelle.jpg"
-                alt="Photo Michelle Appleton" class="card__author-photo">
+        <div class="card__wrapper">
+          <section class="card__body">
+            <h1 class="card__title">Shift the overall look and feel by adding
+              these wonderful
+              touches to furniture in your home</h1>
+            <p class="card__description">Ever been in a room and felt like
+              something was missing? Perhaps
+              it felt slightly bare and uninviting. I’ve got some simple tips
+              to help you make any room feel complete.</p>
+          </section>
+          <footer class="card__footer">
+            <div class="card__author">
+              <div class="card__author-photo-wrapper">
+                <img src="./images/avatar-michelle.jpg"
+                  alt="Photo Michelle Appleton" class="card__author-photo">
+              </div>
+              <div class="card__author-info">
+                <span class="card__author-name">Michelle Appleton</span>
+                <time datetime="2020-06-28" class="card__author-time">28 Jun
+                  2020</time>
+              </div>
             </div>
-            <div class="card__author-info">
-              <span class="card__author-name">Michelle Appleton</span>
-              <time datetime="2020-06-28" class="card__author-time">28 Jun
-                2020</time>
+            <div class="card__share" data-js-card-share>
+              <button class="card__share-button" type="button"
+                aria-label="Share"
+                aria-expanded="false"
+                data-js-card-share-button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15"
+                  height="13"><path fill="#6E8098"
+                    d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" /></svg>
+              </button>
+              <div class="card__share-popup share-popup"
+                data-js-card-share-popup
+                hidden>
+                <span class="share-popup__title">Share</span>
+                <ul class="share-popup__list">
+                  <li class="share-popup__item">
+                    <a class="share-popup__link" href="#" target="_blank"
+                      rel="noopener noreferrer" aria-label="Facebook">
+                      <img class="share-popup__image"
+                        src="./images/icon-facebook.svg" alt>
+                    </a>
+                  </li>
+                  <li class="share-popup__item">
+                    <a class="share-popup__link" href="#" target="_blank"
+                      rel="noopener noreferrer" aria-label="Twitter">
+                      <img class="share-popup__image"
+                        src="./images/icon-twitter.svg" alt>
+                    </a>
+                  </li>
+                  <li class="share-popup__item">
+                    <a class="share-popup__link" href="#" target="_blank"
+                      rel="noopener noreferrer" aria-label="Pinterest">
+                      <img class="share-popup__image"
+                        src="./images/icon-pinterest.svg" alt>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="card__share" data-js-card-share>
-            <button class="card__share-button" type="button" aria-label="Share"
-              aria-expanded="false"
-              data-js-card-share-button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15"
-                height="13"><path fill="#6E8098"
-                  d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z" /></svg>
-            </button>
-            <div class="card__share-popup share-popup" data-js-card-share-popup
-              hidden>
-              <span class="share-popup__title">Share</span>
-              <ul class="share-popup__list">
-                <li class="share-popup__item">
-                  <a class="share-popup__link" href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Facebook">
-                    <img class="share-popup__image"
-                      src="./images/icon-facebook.svg" alt>
-                  </a>
-                </li>
-                <li class="share-popup__item">
-                  <a class="share-popup__link" href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Twitter">
-                    <img class="share-popup__image"
-                      src="./images/icon-twitter.svg" alt>
-                  </a>
-                </li>
-                <li class="share-popup__item">
-                  <a class="share-popup__link" href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Pinterest">
-                    <img class="share-popup__image"
-                      src="./images/icon-pinterest.svg" alt>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </article>
     </main>
   </body>

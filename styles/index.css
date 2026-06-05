@@ -44,6 +44,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 7rem;
 }
 
 .card {
@@ -97,6 +98,7 @@ body {
 }
 
 .card__footer {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -151,6 +153,75 @@ body {
   transition: fill 0.2s ease;
 }
 
+.card__share.is-active .card__share-button {
+  background-color: var(--color-desaturated-dark-blue);
+}
+
+.card__share.is-active .card__share-button svg * {
+  fill: var(--color-white);
+}
+
+.card__share.is-active .card__share-popup {
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.card__share-popup {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: -75px;
+  right: -95px;
+  column-gap: 1rem;
+  padding: 1rem 2rem;
+  color: var(--color-grayish-blue);
+  border: 1px solid var(--color-very-dark-grayish-blue);
+  border-radius: var(--radius-card);
+  background-color: var(--color-very-dark-grayish-blue);
+  box-shadow: var(--shadow-card);
+  scale: 0;
+  opacity: 0;
+  transition:
+    scale 0.3s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+  visibility: hidden;
+}
+
+.share-popup::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 53%;
+  transform: translateX(-53%);
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 16px solid var(--color-very-dark-grayish-blue);
+  margin-top: -2px;
+}
+
+.share-popup__title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.share-popup__list {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  list-style-type: none;
+}
+
+.share-popup__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (hover: hover) {
   .card__share-button:hover {
     background-color: var(--color-grayish-blue);
@@ -158,5 +229,52 @@ body {
 
   .card__share-button:hover svg * {
     fill: var(--color-white);
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 2rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .card__image-wrapper {
+    height: 12.5rem;
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+  }
+
+  .card__image {
+    scale: 1.15;
+  }
+
+  .card__wrapper {
+    padding: 1.5rem;
+  }
+
+  .card__share-button {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    z-index: 100;
+  }
+
+  .share-popup {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: calc(100% + 1.5rem * 2);
+    height: calc(100% + 1.5rem * 2);
+    border-radius: 0 0 var(--radius-card) var(--radius-card);
+  }
+
+  .share-popup::after {
+    display: none;
+  }
+
+  .share-popup__title {
+    font-size: 0.8rem;
   }
 }
